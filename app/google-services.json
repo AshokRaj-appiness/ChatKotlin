@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "932670567479",
+    "firebase_url": "https://chatkotlin-1d006.firebaseio.com",
+    "project_id": "chatkotlin-1d006",
+    "storage_bucket": "chatkotlin-1d006.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932670567479:android:c636bb220927f036",
+        "android_client_info": {
+          "package_name": "com.example.chatkotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932670567479-n2g4so1g0s5bh1injsvihcbsr4dcgb6c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9cQb5JldnY8BzNqJgOgqc3ktQ2uktUcI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932670567479-n2g4so1g0s5bh1injsvihcbsr4dcgb6c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
