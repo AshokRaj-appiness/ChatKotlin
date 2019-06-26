@@ -1,4 +1,4 @@
-package com.example.chatkotlin
+package com.example.chatkotlin.oldChatApp
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage

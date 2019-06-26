@@ -1,9 +1,9 @@
-package com.example.chatkotlin
+package com.example.chatkotlin.oldChatApp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.chatkotlin.R
 import com.google.firebase.auth.FirebaseAuth
-import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivity
 
 class SplashActivity : AppCompatActivity() {

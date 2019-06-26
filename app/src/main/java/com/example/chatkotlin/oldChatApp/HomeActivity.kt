@@ -1,10 +1,10 @@
-package com.example.chatkotlin
+package com.example.chatkotlin.oldChatApp
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.chatkotlin.fragments.MyAccount
+import com.example.chatkotlin.R
+import com.example.chatkotlin.oldChatApp.fragments.MyAccount
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {

@@ -1,20 +1,16 @@
-package com.example.chatkotlin
+package com.example.chatkotlin.oldChatApp
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat.startActivityForResult
-import androidx.core.content.ContextCompat.startActivity
+import com.example.chatkotlin.R
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
-import com.firebase.ui.auth.data.model.User
-import io.grpc.okhttp.internal.framed.ErrorCode
 import kotlinx.android.synthetic.main.activity_sign_in.*
 import org.jetbrains.anko.*
-import org.jetbrains.anko.design.longSnackbar
 
 class SignInActivity : AppCompatActivity() {
     private val RC_SIGN_IN = 1
@@ -26,7 +22,8 @@ class SignInActivity : AppCompatActivity() {
         account_sign_in.setOnClickListener {
             val progressDialog = indeterminateProgressDialog("signing in progress")
             Utils.initializeUserIfFirstTime {
-                val intent = AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(SIGN_IN_PROVIDERS).setLogo(R.drawable.ic_account_circle_black_24dp).build()
+                val intent = AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(SIGN_IN_PROVIDERS)
+                    .setLogo(R.drawable.ic_account_circle_black_24dp).build()
                 startActivityForResult(intent, RC_SIGN_IN)
             }
 

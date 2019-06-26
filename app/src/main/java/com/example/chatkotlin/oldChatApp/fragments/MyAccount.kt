@@ -1,10 +1,8 @@
-package com.example.chatkotlin.fragments
+package com.example.chatkotlin.oldChatApp.fragments
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
-import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import androidx.fragment.app.Fragment
@@ -13,18 +11,16 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.chatkotlin.R
-import com.example.chatkotlin.SignInActivity
-import com.example.chatkotlin.StorageUtil
-import com.example.chatkotlin.Utils
+import com.example.chatkotlin.oldChatApp.SignInActivity
+import com.example.chatkotlin.oldChatApp.StorageUtil
+import com.example.chatkotlin.oldChatApp.Utils
 import com.firebase.ui.auth.AuthUI
-import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_my_account.*
 import kotlinx.android.synthetic.main.fragment_my_account.view.*
 import kotlinx.android.synthetic.main.fragment_my_account.view.editText_bio
 import kotlinx.android.synthetic.main.fragment_my_account.view.editText_name
 //import kotlinx.android.synthetic.main.fragment_my_account.* 1
 import java.io.ByteArrayOutputStream
-import org.jetbrains.anko.*
 
 class MyAccount : Fragment() {
     val RC_SELECT_IMAGE = 2
@@ -56,7 +52,7 @@ class MyAccount : Fragment() {
 
             btn_sign_out.setOnClickListener {
                 AuthUI.getInstance().signOut(this@MyAccount.context!!).addOnCompleteListener {
-                    val intent = Intent(requireActivity(),SignInActivity::class.java)
+                    val intent = Intent(requireActivity(), SignInActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                 }

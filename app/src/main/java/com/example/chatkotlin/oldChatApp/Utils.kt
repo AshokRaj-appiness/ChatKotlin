@@ -1,6 +1,6 @@
-package com.example.chatkotlin
+package com.example.chatkotlin.oldChatApp
 
-import com.example.chatkotlin.model.User
+import com.example.chatkotlin.oldChatApp.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -13,9 +13,11 @@ object Utils {
     private val documentReference:DocumentReference get() = firebaseFirestoreInstance.document("users/${FirebaseAuth.getInstance().uid ?: throw NullPointerException("Uid is Null")}")
 
     fun initializeUserIfFirstTime(onComplete:()->Unit){
-        documentReference.get().addOnSuccessListener {documentSnapshot->
+        documentReference.get().addOnSuccessListener { documentSnapshot->
             if(!documentSnapshot.exists()){
-                val newUser = User(FirebaseAuth.getInstance().currentUser?.displayName?:"","",null)
+                val newUser = User(
+                    FirebaseAuth.getInstance().currentUser?.displayName ?: "", "", null
+                )
                 documentReference.set(newUser).addOnSuccessListener {
                     onComplete()
                 }
