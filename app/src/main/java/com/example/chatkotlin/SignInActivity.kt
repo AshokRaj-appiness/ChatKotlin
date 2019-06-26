@@ -42,7 +42,7 @@ class SignInActivity : AppCompatActivity() {
             if(resultCode == Activity.RESULT_OK){
                 startActivity(intentFor<HomeActivity>().newTask().clearTask())
             }
-            else if(resultCode == Activity.git RESULT_CANCELED){
+            else if(resultCode == Activity.RESULT_CANCELED){
                 if(response == null) return
                 when(response.error?.errorCode){
                     ErrorCodes.NO_NETWORK -> toast("No internet")
