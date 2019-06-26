@@ -1,4 +1,4 @@
-package com.example.chatkotlin.oldChatApp
+package com.example.chatkotlin.utils
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
@@ -11,7 +11,7 @@ object StorageUtil {
         FirebaseStorage.getInstance()
     }
 
-    val currentUserRef:StorageReference get() = storageInstance.reference.child(FirebaseAuth.getInstance().uid ?: throw NullPointerException("Uid is Null"))
+    val currentUserRef:StorageReference get() = storageInstance.reference.child(FirebaseAuth.getInstance().currentUser?.uid ?: throw NullPointerException("Uid is Null"))
 
     fun uploadProfilePhoto(imageBytes:ByteArray,onSuccess:(imagePath:String)->Unit){
         val ref = currentUserRef.child("profilePicture/${UUID.nameUUIDFromBytes(imageBytes)}")

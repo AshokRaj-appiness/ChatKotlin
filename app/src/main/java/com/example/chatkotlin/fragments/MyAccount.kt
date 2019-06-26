@@ -1,25 +1,23 @@
-package com.example.chatkotlin.oldChatApp.fragments
+package com.example.chatkotlin.fragments
 
+//import kotlinx.android.synthetic.main.fragment_my_account.* 1
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.chatkotlin.R
-import com.example.chatkotlin.oldChatApp.SignInActivity
-import com.example.chatkotlin.oldChatApp.StorageUtil
-import com.example.chatkotlin.oldChatApp.Utils
+import com.example.chatkotlin.SignInActivity
+import com.example.chatkotlin.utils.StorageUtil
+import com.example.chatkotlin.utils.Utils
 import com.firebase.ui.auth.AuthUI
 import kotlinx.android.synthetic.main.fragment_my_account.*
 import kotlinx.android.synthetic.main.fragment_my_account.view.*
-import kotlinx.android.synthetic.main.fragment_my_account.view.editText_bio
-import kotlinx.android.synthetic.main.fragment_my_account.view.editText_name
-//import kotlinx.android.synthetic.main.fragment_my_account.* 1
 import java.io.ByteArrayOutputStream
 
 class MyAccount : Fragment() {
@@ -47,6 +45,7 @@ class MyAccount : Fragment() {
                     }
                 }else{
                     Utils.updateCurrentUser(editText_name.text.toString(),editText_bio.text.toString(),null)
+                   Toast.makeText(requireActivity(),"saving",Toast.LENGTH_SHORT).show()
                 }
             }
 
