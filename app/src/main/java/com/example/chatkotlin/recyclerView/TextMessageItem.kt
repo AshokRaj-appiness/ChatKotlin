@@ -13,6 +13,7 @@ class TextMessageItem(val message: TextMessage,
     : MessageItem(message) {
     override fun bind(viewHolder: ViewHolder, position: Int) {
         viewHolder.textView_message_text.text = message.text
+        Log.d("eeee ==>",message.text)
         super.bind(viewHolder, position)
     }
 

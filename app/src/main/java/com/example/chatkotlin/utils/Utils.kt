@@ -109,6 +109,7 @@ object Utils {
                 }
                 val items = mutableListOf<Item>()
                 querySnapshot!!.documents.forEach {
+                    Log.e("==>",channelId+"")
                     Log.e("Error=>${userId}","==> ${it["senderId"].toString()} ==> reciver ${it["recipientId"].toString()}")
                     if(it["type"] == MessageType.TEXT)
                         items.add(TextMessageItem(it.toObject(TextMessage::class.java)!!,context))
